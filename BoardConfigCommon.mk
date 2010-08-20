@@ -22,7 +22,7 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
--include vendor/htc/sapphire/BoardConfigVendor.mk
+-include vendor/htc/dream-sapphire/BoardConfigCommonVendor.mk
 
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_CPU_ABI := armeabi
