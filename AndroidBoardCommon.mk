@@ -14,15 +14,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
-endif
-
-file := $(INSTALLED_KERNEL_TARGET)
-ALL_PREBUILT += $(file)
-$(file): $(TARGET_PREBUILT_KERNEL) | $(ACP)
-	$(transform-prebuilt-to-target)
-
 $(call add-radio-file,recovery/images/firmware_error.565)
 $(call add-radio-file,recovery/images/bitmap_size.txt)
 
@@ -44,5 +35,7 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
+
+ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 -include vendor/htc/dream-sapphire/AndroidBoardCommonVendor.mk
