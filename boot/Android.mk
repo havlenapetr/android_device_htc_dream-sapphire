@@ -30,6 +30,8 @@ LOCAL_CFLAGS += -march=armv6
 
 LOCAL_MODULE := libboot_board_dream_sapphire
 
+LOCAL_MODULE_TAGS := optional
+
 include $(BUILD_RAW_STATIC_LIBRARY)
 
 endif # !TARGET_SIMULATOR
