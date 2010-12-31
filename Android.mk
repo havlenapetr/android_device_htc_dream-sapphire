@@ -12,5 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-include $(call all-named-subdir-makefiles, boot libsensors)
+ifeq ($(TARGET_DEVICE),sapphire)
+include $(call all-named-subdir-makefiles, boot libsensors libcamera)
+endif
+ifeq ($(TARGET_DEVICE),dream)
+include $(call all-named-subdir-makefiles, boot libsensors libcamera)
+endif
